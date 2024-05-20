@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streck Cheats</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .header {
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+            .header h1 {
+                margin: 0;
+            }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            align-items: center;
+        }
+
+        .item {
+            background-color: #1f1f1f;
+            border: 1px solid #333;
+            border-radius: 10px;
+            margin: 10px;
+            width: 300px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+            .item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+                background-color: #252525;
+            }
+
+            .item img {
+                width: 50%;
+                /*border-bottom: 1px solid #333;*/
+            }
+
+        .item-content {
+            padding: 20px;
+        }
+
+        .item h3 {
+            margin: 0 0 10px 0;
+        }
+
+        .item p {
+            margin: 0 0 10px 0;
+        }
+
+        .features {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 0 10px 0;
+        }
+
+            .features li {
+                background: #2a2a2a;
+                margin: 5px 0;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+        .marked {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 24px;
+            color: #e91e63;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .get-it-button {
+            display: block;
+            background-color: #e91e63;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+            .get-it-button:hover {
+                background-color: #d81b60;
+            }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Streck Cheats</h1>
+    </div>
+    <div class="container" id="items-container">
+
+    </div>
+
+    <script>
+        const items = [
+            {
+                ItemName: "Streck Public",
+                IconUrl: "https://static.wikia.nocookie.net/fortnite/images/7/74/Bronze_III_-_Icon_-_Fortnite.png/revision/latest?cb=20230531201222",
+                GlobalPrice: 2,
+                DurationTimeStamp: 86400 * 1,
+                Description: "1 Day Fortnite Public",
+                Features: ["Standard Features", "Support All Windows", "24/7 Support", "Eac/Be Undetected"],
+                Marked: "none",
+                MarkedColor: "",
+                MarkedColorText: "",
+                FeaturesColor: "#2a2a2a"
+            },
+            {
+                ItemName: "Streck Public",
+                IconUrl: "https://static.wikia.nocookie.net/fortnite/images/e/e1/Diamond_III_-_Icon_-_Fortnite.png/revision/latest?cb=20230531201227",
+                GlobalPrice: 5,
+                DurationTimeStamp: 86400 * 3,
+                Description: "3 Days Fortnite Public",
+                Features: ["Standard Features", "Support All Windows", "24/7 Support", "Eac/Be Undetected"],
+                Marked: "none",
+                MarkedColor: "",
+                MarkedColorText: "",
+                FeaturesColor: "#2a2a2a"
+            },
+            {
+                ItemName: "Streck Public",
+                IconUrl: "https://static.wikia.nocookie.net/fortnite/images/2/2a/Champion_-_Icon_-_Fortnite.png/revision/latest?cb=20230531201223",
+                GlobalPrice: 8,
+                DurationTimeStamp: 86400 * 7,
+                Description: "1 Week Fortnite Public",
+                Features: ["Standard Features", "Support All Windows", "24/7 Support", "Eac/Be Undetected", "Free key reset every 3 days"],
+                Marked: "Most Selling",
+                MarkedColor: "#ffeb3b",
+                MarkedColorText: "#333",
+                FeaturesColor: "#2a2a2a"
+            },
+            {
+                ItemName: "Streck Public",
+                IconUrl: "https://static.wikia.nocookie.net/fortnite/images/6/6c/Unreal_-_Icon_-_Fortnite.png/revision/latest?cb=20230531201239",
+                GlobalPrice: 25,
+                DurationTimeStamp: 86400 * 30,
+                Description: "1 Month Fortnite Public",
+                Features: ["Standard Features", "Support All Windows", "24/7 Support", "Eac/Be Undetected", "Free key reset every 3 days", "More Features", "Exploits"],
+                Marked: "Best Choice",
+                MarkedColor: "#ff5722",
+                MarkedColorText: "#fff",
+                FeaturesColor: "#4B0082"
+            }
+        ];
+
+        function parseItems(items) {
+            const container = document.getElementById('items-container');
+            items.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('item');
+
+                const marked = item.Marked !== "none" ? `<div class="marked" style="background-color: ${item.MarkedColor}; color: ${item.MarkedColorText};">${item.Marked}</div>` : '';
+                const features = item.Features.map(feature => `<li style="background-color: ${item.FeaturesColor};">${feature}</li>`).join('');
+
+                itemDiv.innerHTML = `
+                        <img src="${item.IconUrl}" alt="${item.ItemName}">
+                        <div class="item-content">
+                            <h3>${item.ItemName}</h3>
+                            <p>${item.Description}</p>
+                            <ul class="features">${features}</ul>
+                            <div class="price">$${item.GlobalPrice}</div>
+                            ${marked}
+                            <a href="https://discord.gg/streck" class="get-it-button">Get it!</a>
+                        </div>
+                    `;
+
+                container.appendChild(itemDiv);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            parseItems(items);
+        });
+    </script>
+</body>
+</html>
